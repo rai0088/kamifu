@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <title>Svatba</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<nav id="nav">
+  <button id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div id="nav-links">
+    <a href="#hero">Úvod</a>
+    <a href="#info">Informace</a>
+    <a href="#program">Program</a>
+    <a href="#gifts">Dary</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#details">Praktické info</a>
+    <a href="#map-section">Mapa</a>
+    <a href="#gallery">Galerie</a>
+  </div>
+</nav>
+
+<div id="hero">
+  <h1>Kateřina &amp; Michael</h1>
+  <p>12. září 2026</p>
+  <div id="countdown">
+    <span id="days">0</span> dní
+    <span id="hours">0</span> hodin
+    <span id="minutes">0</span> minut
+    <span id="seconds">0</span> sekund
+  </div>
+</div>
+
+  <hr>
+
+  <section id="info">
+    <h2>Informace o svatbě</h2>
+    <p>Obřad i oslava proběhnou v areálu Na Kamínce.</p>
+    <p>Přivítáme vás mezi 11:00 a 12:00, obřad začíná v 13:00.</p>
+  </section>
+
+  <hr>
+
+  <section id="program">
+    <h2>Program (předpokládané časy)</h2>
+    <ul>
+      <li>13:00 – Obřad</li>
+      <li>13:30 – Společné focení</li>
+      <li>15:00 – Oběd</li>
+      <li>16:30 – První tanec</li>
+      <li>18:00 – Focení</li>
+      <li>20:00 – Večerní zábava</li>
+    </ul>
+  </section>
+
+  <hr>
+
+<section id="gifts">
+  <h2>Dary</h2>
+  <p>My tušili, že vás tahle kolonka bude zajímat.</p>
+  <p>Máme pro vás tedy dobrou zprávu:</p> 
+  <p>Není třeba vymýšlet žádné složitosti! Vystačíte si jen s obálkou.</p>
+  <p>A jako obsah nás potěší každá vaše korunka, euro či dolárek</p>
+  <p>... a zlaté cihličky taky zvládneme :)</p>
+</section>
+
+  <hr>
+
+<section id="rsvp">
+  <h2>Potvrzení účasti</h2>
+  <p>Budeme rádi, když nám dáte vědět, zda dorazíte.</p>
+
+  <form id="rsvp-form">
+    <label>
+      Jméno a příjmení*
+      <input type="text" name="full_name" required>
+    </label>
+
+    <fieldset>
+      <legend>Zúčastníte se naší svatby?*</legend>
+      <label><input type="radio" name="attendance" value="Ano" required> Ano</label>
+      <label><input type="radio" name="attendance" value="Ne" required> Bohužel ne :(</label>
+    </fieldset>
+
+    <label>
+      Kolik bude dětí?*
+      <select name="kids_count" id="kids-count" required>
+        <option value="" selected disabled>Vyber</option>
+        <option>0</option><option>1</option><option>2</option><option>3</option>
+      </select>
+    </label>
+
+    <div id="kids-ages-wrap" style="display:none;">
+      <label>
+        Kolik je dětem let?*
+        <input type="text" name="kids_ages" id="kids-ages" placeholder="Např. 2 a 5">
+      </label>
+    </div>
+
+    <fieldset>
+      <legend>Volba jídla*</legend>
+      <label><input type="radio" name="meal" value="Maso" required> Maso</label>
+      <label><input type="radio" name="meal" value="Vegetariánské" required> Vegetariánské</label>
+      <label><input type="radio" name="meal" value="Jiné / speciální" required> Jiné / speciální</label>
+
+      <div id="meal-notes-wrap" style="display:none; margin-top:10px;">
+        <label>
+          Upřesněte prosím speciální požadavky
+          <input type="text" name="meal_notes" id="meal-notes">
+        </label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Plánujete zůstat přes noc?*</legend>
+      <label><input type="radio" name="sleep" value="Ano" required> Ano</label>
+      <label><input type="radio" name="sleep" value="Ne" required> Ne</label>
+    </fieldset>
+
+    <label>
+      E-mail pro další info*
+      <input type="email" name="email" required>
+    </label>
+
+    <button type="submit" id="rsvp-submit">Odeslat</button>
+
+    <p id="rsvp-status" style="margin-top:12px;"></p>
+  </form>
+</section>
+
+
+  <hr>
+
+
+  <section id="details">
+  <h2>Praktické informace</h2>
+
+  <div class="details-list">
+  <div class="detail-item">
+    <img class="detail-icon" src="images/ikon-doprava.png" alt="">
+    <div class="detail-text">
+      <p>Hodinku z Brna, hodinku a půl z Ostravy.</p>
+    </div>
+  </div>
+
+  <div class="detail-item">
+    <img class="detail-icon" src="images/ikon-parkovani.png" alt="">
+    <div class="detail-text">
+      <p>Parkovat lze přímo v areálu Na Kamínce.</p>
+    </div>
+  </div>
+
+  <div class="detail-item">
+    <img class="detail-icon" src="images/ikon-ubytovani.png" alt="">
+    <div class="detail-text">
+      <p>Pro všechny je připraveno ubytování na pokojích, ve srubech nebo chatkách. Odvoz nezajišťujeme a budeme naopak rádi, když s námi zůstanete přes noc až do rána.</p>
+    </div>
+  </div>
+
+  <div class="detail-item">
+    <img class="detail-icon" src="images/ikon-kontakt.png" alt="">
+    <div class="detail-text">
+      <p>Pokud budete něco potřebovat, ozvěte se nám.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+  <section id="map-section" class="fullwidth">
+    <h2>Mapa místa</h2>
+    <div class="map-full">
+        <iframe
+            src="https://www.google.com/maps?q=Na+Kam%C3%ADnce&hl=cs&z=17&output=embed"
+            allowfullscreen
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+    </div>
+  </section>
+  <hr>
+
+  <section id="gallery">
+    <h2>Naše fotky</h2>
+    <div class="photo-grid">
+      <img src="images/Foto1.jpg" alt="Svatební fotka 1">
+      <img src="images/Foto2.jpg" alt="Svatební fotka 2">
+      <img src="images/Foto3.jpg" alt="Svatební fotka 3">
+      <img src="images/Foto4.jpg" alt="Svatební fotka 4">
+      <img src="images/Foto5.jpg" alt="Svatební fotka 5">
+      <img src="images/Foto6.jpg" alt="Svatební fotka 6">
+      <img src="images/Foto7.jpg" alt="Svatební fotka 7">
+      <img src="images/Foto8.jpg" alt="Svatební fotka 8">
+      <img src="images/Foto9.jpg" alt="Svatební fotka 9">
+    </div>
+  </section>
+
+  <div id="lightbox" style="display:none;">
+    <span id="lightbox-close">&times;</span>
+    <span id="lightbox-prev">‹</span>
+    <img id="lightbox-img" src="" alt="">
+    <span id="lightbox-next">›</span>
+  </div>
+
+  <hr>
+
+
+  <script>
+    function easeInOutQuad(t) {
+      return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+    }
+
+    function smoothScrollTo(targetY, duration = 1200) {
+      const startY = window.scrollY;
+      const diff = targetY - startY;
+      let startTime = null;
+
+      function step(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const time = timestamp - startTime;
+        const progress = Math.min(time / duration, 1);
+        const eased = easeInOutQuad(progress);
+
+        window.scrollTo(0, startY + diff * eased);
+
+        if (time < duration) requestAnimationFrame(step);
+      }
+
+      requestAnimationFrame(step);
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('#nav a').forEach(link => {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (!href || !href.startsWith('#')) return;
+
+          const target = document.querySelector(href);
+          if (!target) return;
+
+          e.preventDefault();
+
+          const offset = 90; // rezerva pod navigací
+          const targetY = target.getBoundingClientRect().top + window.scrollY - offset;
+
+          smoothScrollTo(targetY, 1400);
+        });
+      });
+    });
+  </script>
+
+<script>
+  const WEBHOOK_URL = "https://hook.eu1.make.com/1o2xjbd5tejd89pgefo8q7b5ojd2h4cb";
+
+  const form = document.getElementById("rsvp-form");
+  const submitBtn = document.getElementById("rsvp-submit");
+  const statusEl = document.getElementById("rsvp-status");
+
+  const kidsCount = document.getElementById("kids-count");
+  const kidsAgesWrap = document.getElementById("kids-ages-wrap");
+  const kidsAges = document.getElementById("kids-ages");
+
+  const mealNotesWrap = document.getElementById("meal-notes-wrap");
+  const mealNotes = document.getElementById("meal-notes");
+
+  // Děti -> zobrazit/skryt "věk"
+  kidsCount.addEventListener("change", () => {
+    const v = kidsCount.value;
+    const show = v && v !== "0";
+    kidsAgesWrap.style.display = show ? "block" : "none";
+    kidsAges.required = show;
+    if (!show) kidsAges.value = "";
+  });
+
+  // Jídlo -> zobrazit/skryt poznámku
+  document.querySelectorAll('input[name="meal"]').forEach(r => {
+    r.addEventListener("change", () => {
+      const show = r.checked && r.value === "Jiné / speciální";
+      mealNotesWrap.style.display = show ? "block" : "none";
+      if (!show) mealNotes.value = "";
+    });
+  });
+
+  // Odeslání do Make
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    statusEl.textContent = "Odesílám…";
+    submitBtn.disabled = true;
+
+
+    // sesbírej data z formuláře
+    const formData = new FormData(form);
+
+    try {
+    const res = await fetch(WEBHOOK_URL, {
+        method: "POST",
+        body: formData
+    });
+
+
+      if (!res.ok) throw new Error("HTTP " + res.status);
+
+      // Přesměrování na potvrzovací stránku (uděláme v dalším kroku)
+      window.location.href = "potvrzeni.html";
+    } catch (err) {
+      statusEl.textContent = "Nepodařilo se odeslat. Zkus to prosím znovu.";
+      console.error(err);
+      submitBtn.disabled = false;
+    }
+  });
+</script>
+
+<script>
+  // Odpočítávání do svatby
+  const weddingDate = new Date('2026-09-12T13:00:00').getTime();
+
+  function updateCountdown() {
+    const now = new Date().getTime();
+    const diff = weddingDate - now;
+
+    if (diff <= 0) {
+      document.getElementById('countdown').innerHTML = '🎉 Svatba právě probíhá!';
+      return;
+    }
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    document.getElementById('days').textContent = days;
+    document.getElementById('hours').textContent = hours;
+    document.getElementById('minutes').textContent = minutes;
+    document.getElementById('seconds').textContent = seconds;
+  }
+
+  // Spustit hned + aktualizovat každou sekundu
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+
+<script>
+  // Lightbox pro fotogalerii
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const lightboxClose = document.getElementById('lightbox-close');
+  const lightboxPrev = document.getElementById('lightbox-prev');
+  const lightboxNext = document.getElementById('lightbox-next');
+
+  const photos = Array.from(document.querySelectorAll('.photo-grid img'));
+  let currentIndex = 0;
+
+  // Otevření lightboxu
+  photos.forEach((img, index) => {
+    img.addEventListener('click', () => {
+      currentIndex = index;
+      showPhoto(currentIndex);
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  // Zobrazení fotky podle indexu
+  function showPhoto(index) {
+    lightboxImg.src = photos[index].src;
+    lightboxImg.alt = photos[index].alt;
+  }
+
+  // Předchozí fotka
+  lightboxPrev.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+    showPhoto(currentIndex);
+  });
+
+  // Další fotka
+  lightboxNext.addEventListener('click', (e) => {
+    e.stopPropagation();
+    currentIndex = (currentIndex + 1) % photos.length;
+    showPhoto(currentIndex);
+  });
+
+  // Zavření křížkem
+  lightboxClose.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  // Zavření kliknutím mimo
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+    }
+  });
+ 
+  // Ovládání šipkami na klávesnici
+  document.addEventListener('keydown', (e) => {
+    if (lightbox.style.display !== 'flex') return; // pouze když je lightbox otevřený
+
+    if (e.key === 'ArrowLeft') {
+      currentIndex = (currentIndex - 1 + photos.length) % photos.length;
+      showPhoto(currentIndex);
+    } else if (e.key === 'ArrowRight') {
+      currentIndex = (currentIndex + 1) % photos.length;
+      showPhoto(currentIndex);
+    } else if (e.key === 'Escape') {
+      lightbox.style.display = 'none';
+    }
+  });
+
+</script>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Zavřít menu po kliknutí na odkaz
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
+
+</body>
+</html>
