@@ -505,7 +505,9 @@ section.fullwidth {
 
 #rsvp fieldset label {
   display: inline-flex;
+  flex-direction: row;      /* důležité: přepíše "column" z #rsvp label */
   align-items: center;
+  justify-content: center;  /* pro jistotu vycentruje obsah */
   gap: 6px;
   margin: 0 14px;
   font-size: 15px;
