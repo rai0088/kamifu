@@ -276,10 +276,11 @@ section:not(#hero):not(.fullwidth) {
 
 #program li {
   display: grid;
-  grid-template-columns: 140px 1fr;
+  grid-template-columns: 140px auto;
   gap: 20px;
   font-size: 18px;
-  margin: 10px 0;
+  margin: 10px auto;
+  max-width: 400px;
   color: #555;
   text-align: left;
 }
