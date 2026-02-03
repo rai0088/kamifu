@@ -493,8 +493,7 @@ section.fullwidth {
   margin: 0 auto;
   text-align: center;
   min-width: 0;
-  width: 100%;
-  display: block;
+  width: fit-content;
 }
 
 #rsvp legend {
