@@ -510,6 +510,24 @@ section.fullwidth {
   color: #444;
 }
 
+/* Mobilní – zajištění zarovnání */
+@media (max-width: 600px) {
+  #rsvp fieldset {
+    text-align: left;
+    padding: 0 20px;
+  }
+  
+  #rsvp legend {
+    text-align: center;
+    width: 100%;
+  }
+  
+  #rsvp fieldset label {
+    margin: 10px 0;
+    justify-content: flex-start;
+  }
+}
+
 /* TLAČÍTKO – LEHČÍ */
 #rsvp button {
   margin: 10px auto 0;
