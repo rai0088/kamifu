@@ -166,10 +166,18 @@ h2 {
 }
 
 /* Mobilní zobrazení - "a" na novém řádku */
+#hero h1 .mobile-and {
+  display: inline;
+}
+
 @media (max-width: 768px) {
   #hero h1 .mobile-and {
     display: block;
-    margin: 8px 0;
+    margin: 5px 0;
+  }
+  
+  #hero h1 {
+    font-size: 48px;
   }
 }
 
