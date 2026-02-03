@@ -259,9 +259,29 @@ section:not(#hero):not(.fullwidth) {
 }
 
 #program li {
+  display: grid;
+  grid-template-columns: 140px 1fr;
+  gap: 20px;
   font-size: 18px;
   margin: 10px 0;
   color: #555;
+  text-align: left;
+}
+
+#program li.note {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+#program .time {
+  font-weight: 500;
+  color: #2f4633;
+  text-align: right;
+}
+
+#program .event {
+  text-align: left;
 }
 
 /* =====================================================
