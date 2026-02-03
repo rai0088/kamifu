@@ -493,7 +493,10 @@ section.fullwidth {
   margin: 0 auto;
   text-align: center;
   min-width: 0;
-  width: fit-content;
+
+  /* Firefox-friendly centrování fieldsetu */
+  display: inline-block;
+  width: auto;
 }
 
 #rsvp legend {
@@ -505,9 +508,9 @@ section.fullwidth {
 
 #rsvp fieldset label {
   display: inline-flex;
-  flex-direction: row;      /* důležité: přepíše "column" z #rsvp label */
+  flex-direction: row;      /* Firefox fix: přepíše "column" z #rsvp label */
   align-items: center;
-  justify-content: center;  /* pro jistotu vycentruje obsah */
+  justify-content: center;  /* ať se text drží uprostřed */
   gap: 6px;
   margin: 0 14px;
   font-size: 15px;
