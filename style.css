@@ -493,10 +493,7 @@ section.fullwidth {
   margin: 0 auto;
   text-align: center;
   min-width: 0;
-
-  /* Firefox-friendly centrování fieldsetu */
-  display: inline-block;
-  width: auto;
+  width: fit-content;
 }
 
 #rsvp legend {
