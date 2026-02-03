@@ -9,20 +9,46 @@
 </head>
 <body>
 
-  <nav id="nav">
+<nav id="nav">
+  <button id="hamburger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <div id="nav-links">
     <a href="index.html#hero">Úvod</a>
-    <a href="index.html#info">Informace</a>
+    <a href="index.html#info">Místo</a>
     <a href="index.html#program">Program</a>
+    <a href="index.html#gifts">Dary</a>
     <a href="index.html#rsvp">RSVP</a>
-    <a href="index.html#details">Praktické info</a>
+    <a href="index.html#details">Praktické informace</a>
     <a href="index.html#map-section">Mapa</a>
-  </nav>
+    <a href="index.html#gallery">Galerie</a>
+  </div>
+</nav>
 
   <section style="margin-top: 140px; text-align:center;">
     <h2>Děkujeme!</h2>
     <p>Máme to zapsané. Těšíme se na vás 💚</p>
     <p><a href="index.html#hero">Zpět na web</a></p>
   </section>
+
+<script>
+  // Hamburger menu
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('open');
+  });
+
+  // Zavřít menu po kliknutí na odkaz
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+    });
+  });
+</script>
 
 </body>
 </html>

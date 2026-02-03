@@ -534,6 +534,11 @@ section.fullwidth {
   cursor: not-allowed;
 }
 
+#rsvp button:focus {
+  outline: 2px solid #2f4633;
+  outline-offset: 2px;
+}
+
 /* STATUS TEXT */
 #rsvp-status {
   font-size: 15px;
