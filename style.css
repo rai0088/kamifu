@@ -165,6 +165,14 @@ h2 {
   margin-bottom: 10px;
 }
 
+/* Mobilní zobrazení - "a" na novém řádku */
+@media (max-width: 768px) {
+  #hero h1 .mobile-and {
+    display: block;
+    margin: 8px 0;
+  }
+}
+
 #hero p {
   font-size: 44px;
   color: #666;
