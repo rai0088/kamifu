@@ -57,7 +57,7 @@
       <li><span class="time">13:00 - 13:30</span><span class="event">Obřad</span></li>
       <li><span class="time">13:30 - 14:30</span><span class="event">Focení</span></li>
       <li><span class="time">14:45 - 15:45</span><span class="event">Oběd</span></li>
-      <li class="note"> Časy jsou orientační. Vše ostatní jako dort, tanec a podobně bude doplněno. Už teď se na vás moc těšíme :)</li>
+      <li class="note"> Časy po obřadu jsou orientační. Vše ostatní jako dort, tanec a podobně bude doplněno. Už teď se na vás moc těšíme :)</li>
     </ul>
 </section>
 
@@ -87,9 +87,11 @@
 
     <fieldset>
       <legend>Zúčastníte se naší svatby?*</legend>
-      <label><input type="radio" name="attendance" value="Ano" required> Ano</label>
-      <label><input type="radio" name="attendance" value="Ne" required> Bohužel ne :(</label>
+      <label><input type="radio" id="attendance-yes" name="attendance" value="Ano" required> Ano</label>
+      <label><input type="radio" id="attendance-no" name="attendance" value="Ne"> Bohužel ne :(</label>
     </fieldset>
+
+  <div id="rsvp-extra-fields">
 
     <label>
       Kolik bude dětí?*
@@ -130,6 +132,8 @@
       E-mail pro další info*
       <input type="email" name="email" required>
     </label>
+
+  </div>
 
     <button type="submit" id="rsvp-submit">Odeslat</button>
 
@@ -446,6 +450,112 @@
       navLinks.classList.remove('open');
     });
   });
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const extraFields = document.getElementById('rsvp-extra-fields');
+
+  if (!extraFields) {
+    return;
+  }
+
+  const form = extraFields.closest('form');
+
+  if (!form) {
+    return;
+  }
+
+  function normalizeText(text) {
+    return String(text || '')
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '')
+      .toLowerCase();
+  }
+
+  const allRadios = Array.from(form.querySelectorAll('input[type="radio"]'));
+
+  const notAttendingRadio = document.getElementById('attendance-no');
+
+  if (!notAttendingRadio) {
+    return;
+  }
+
+  const attendanceName = notAttendingRadio.name;
+
+  const attendanceRadios = allRadios.filter(function (radio) {
+    return radio.name === attendanceName;
+  });
+
+  const controlledFields = Array.from(extraFields.querySelectorAll('input, select, textarea'))
+    .filter(function (field) {
+      return field.name;
+    });
+
+  const fieldNames = [];
+
+  controlledFields.forEach(function (field) {
+    if (!fieldNames.includes(field.name)) {
+      fieldNames.push(field.name);
+    }
+
+    if (field.required) {
+      field.setAttribute('data-was-required', 'true');
+    }
+  });
+
+  const fallbackInputs = {};
+
+  fieldNames.forEach(function (name) {
+    const fallbackInput = document.createElement('input');
+
+    fallbackInput.type = 'hidden';
+    fallbackInput.name = name;
+    fallbackInput.value = 'Neúčastní se';
+    fallbackInput.disabled = true;
+    fallbackInput.setAttribute('data-rsvp-fallback', 'true');
+
+    form.appendChild(fallbackInput);
+
+    fallbackInputs[name] = fallbackInput;
+  });
+
+  function updateRsvpFields() {
+    const isNotAttending = notAttendingRadio.checked;
+
+    if (isNotAttending) {
+extraFields.style.setProperty('display', 'none', 'important');
+      controlledFields.forEach(function (field) {
+        field.required = false;
+        field.disabled = true;
+      });
+
+      Object.keys(fallbackInputs).forEach(function (name) {
+        fallbackInputs[name].disabled = false;
+      });
+    } else {
+extraFields.style.removeProperty('display');
+
+      controlledFields.forEach(function (field) {
+        field.disabled = false;
+
+        if (field.getAttribute('data-was-required') === 'true') {
+          field.required = true;
+        }
+      });
+
+      Object.keys(fallbackInputs).forEach(function (name) {
+        fallbackInputs[name].disabled = true;
+      });
+    }
+  }
+
+  attendanceRadios.forEach(function (radio) {
+    radio.addEventListener('change', updateRsvpFields);
+  });
+
+  updateRsvpFields();
+});
 </script>
 
 </body>
