@@ -285,13 +285,11 @@ text-align: left;
 
 #program li.note {
 display: block;
-text-align: center;
-margin: 24px auto 0;
+grid-column: 1 / -1;
 max-width: 500px;
-width: 100%;
-box-sizing: border-box;
-line-height: 1.7;
-overflow-wrap: break-word;
+margin: 20px auto 0;
+text-align: center;
+color: #555;
 }
 
 /* =====================================================
@@ -749,17 +747,3 @@ margin-bottom: 0;
   display: none;
 }
 
-@media (max-width: 600px) {
-  #program ul {
-    max-width: 100%;
-    box-sizing: border-box;
-  }
-
-  #program li.note {
-    max-width: 100%;
-    padding: 0 12px;
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-wrap: break-word;
-  }
-}
