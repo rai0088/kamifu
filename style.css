@@ -165,22 +165,6 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Mobilní zobrazení - "a" na novém řádku */
-#hero h1 .mobile-and {
-  display: inline;
-}
-
-@media (max-width: 768px) {
-  #hero h1 .mobile-and {
-    display: block;
-    margin: 5px 0;
-  }
-  
-  #hero h1 {
-    font-size: 48px;
-  }
-}
-
 #hero p {
   font-size: 44px;
   color: #666;
@@ -275,30 +259,9 @@ section:not(#hero):not(.fullwidth) {
 }
 
 #program li {
-  display: grid;
-  grid-template-columns: 140px auto;
-  gap: 20px;
   font-size: 18px;
-  margin: 10px auto;
-  max-width: 400px;
+  margin: 10px 0;
   color: #555;
-  text-align: left;
-}
-
-#program li.note {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-}
-
-#program .time {
-  font-weight: 500;
-  color: #2f4633;
-  text-align: right;
-}
-
-#program .event {
-  text-align: left;
 }
 
 /* =====================================================
@@ -419,13 +382,6 @@ section.fullwidth {
   padding-bottom: 30%;
 }
 
-/* Mobilní zařízení – vyšší mapa */
-@media (max-width: 768px) {
-  .map-full {
-    padding-bottom: 75%;
-  }
-}
-
 .map-full iframe {
   position: absolute;
   inset: 0;
@@ -456,8 +412,23 @@ section.fullwidth {
 #rsvp form {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  gap: 36px;
   margin-top: 30px;
+}
+
+#rsvp-extra-fields {
+display: flex;
+flex-direction: column;
+gap: 36px;
+margin: 0;
+padding: 0;
+width: 100%;
+}
+
+#rsvp-extra-fields > label,
+#rsvp-extra-fields > fieldset {
+margin-top: 0;
+margin-bottom: 0;
 }
 
 /* POPISKY */
@@ -497,10 +468,8 @@ section.fullwidth {
 #rsvp fieldset {
   border: none;
   padding: 0;
-  margin: 0 auto;
+  margin: 0;
   text-align: center;
-  min-width: 0;
-  width: fit-content;
 }
 
 #rsvp legend {
@@ -512,31 +481,11 @@ section.fullwidth {
 
 #rsvp fieldset label {
   display: inline-flex;
-  flex-direction: row;      /* Firefox fix: přepíše "column" z #rsvp label */
   align-items: center;
-  justify-content: center;  /* ať se text drží uprostřed */
   gap: 6px;
   margin: 0 14px;
   font-size: 15px;
   color: #444;
-}
-
-/* Mobilní – zajištění zarovnání */
-@media (max-width: 600px) {
-  #rsvp fieldset {
-    text-align: left;
-    padding: 0 20px;
-  }
-  
-  #rsvp legend {
-    text-align: center;
-    width: 100%;
-  }
-  
-  #rsvp fieldset label {
-    margin: 10px 0;
-    justify-content: flex-start;
-  }
 }
 
 /* TLAČÍTKO – LEHČÍ */
@@ -561,11 +510,6 @@ section.fullwidth {
 #rsvp button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-}
-
-#rsvp button:focus {
-  outline: 2px solid #2f4633;
-  outline-offset: 2px;
 }
 
 /* STATUS TEXT */
@@ -769,3 +713,9 @@ section.fullwidth {
 #lightbox-next:hover {
   color: #ccc;
 }
+
+/* RSVP – skrytí detailů při "Bohužel ne" */
+#rsvp .is-hidden {
+  display: none;
+}
+
