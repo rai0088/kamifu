@@ -85,13 +85,11 @@
       <input type="text" name="full_name" required>
     </label>
 
-  <fieldset>
-    <legend>Zúčastníte se naší svatby?*</legend>
-    <label><input type="radio" name="attending" value="yes"> Ano</label>
-    <label><input type="radio" name="attending" value="no"> Bohužel ne :(</label>
-  </fieldset>
-
-  <div id="attending-yes">
+    <fieldset>
+      <legend>Zúčastníte se naší svatby?*</legend>
+      <label><input type="radio" name="attendance" value="Ano" required> Ano</label>
+      <label><input type="radio" name="attendance" value="Ne" required> Bohužel ne :(</label>
+    </fieldset>
 
     <label>
       Kolik bude dětí?*
@@ -132,9 +130,8 @@
       E-mail pro další info*
       <input type="email" name="email" required>
     </label>
-  </div>
 
-  <button type="submit">Odeslat</button>
+    <button type="submit" id="rsvp-submit">Odeslat</button>
 
     <p id="rsvp-status" style="margin-top:12px;"></p>
   </form>
@@ -449,25 +446,6 @@
       navLinks.classList.remove('open');
     });
   });
-</script>
-
-<script>
-  const radios = document.querySelectorAll('input[name="attending"]');
-  const attendingYesBlock = document.getElementById('attending-yes');
-
-  function updateFormVisibility() {
-    const selected = document.querySelector('input[name="attending"]:checked');
-    if (!selected) return;
-
-    attendingYesBlock.style.display =
-      selected.value === 'no' ? 'none' : 'block';
-  }
-
-  radios.forEach(radio => {
-    radio.addEventListener('change', updateFormVisibility);
-  });
-
-  updateFormVisibility();
 </script>
 
 </body>
