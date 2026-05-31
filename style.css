@@ -243,53 +243,46 @@ section:not(#hero):not(.fullwidth) {
 ===================================================== */
 
 #program {
-  max-width: 600px;
-  margin: 80px auto;
-  text-align: center;
+max-width: 600px;
+margin: 80px auto;
+text-align: center;
 }
 
 #program h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
+font-size: 32px;
+margin-bottom: 20px;
 }
 
 #program ul {
 list-style: none;
 padding: 0;
-margin: 0 auto;
-display: grid;
-grid-template-columns: max-content max-content;
-column-gap: 24px;
-row-gap: 10px;
-justify-content: center;
 }
 
 #program li {
-display: contents;
+display: grid;
+grid-template-columns: 140px auto;
+gap: 20px;
 font-size: 18px;
+margin: 10px auto;
+max-width: 400px;
 color: #555;
-}
-
-#program .time {
-grid-column: 1;
-font-weight: 500;
-color: #2f4633;
-text-align: right;
-white-space: nowrap;
-}
-
-#program .event {
-grid-column: 2;
 text-align: left;
 }
 
 #program li.note {
 display: block;
-grid-column: 1 / -1;
-max-width: 500px;
-margin: 20px auto 0;
 text-align: center;
-color: #555;
+margin-top: 20px;
+}
+
+#program .time {
+font-weight: 500;
+color: #2f4633;
+text-align: right;
+}
+
+#program .event {
+text-align: left;
 }
 
 /* =====================================================
@@ -747,3 +740,17 @@ margin-bottom: 0;
   display: none;
 }
 
+/* PROGRAM – mobilní zalamování poznámky */
+@media (max-width: 600px) {
+  #program li.note {
+    display: block;
+    width: auto;
+    max-width: calc(100vw - 64px);
+    margin: 20px auto 0;
+    text-align: center;
+    line-height: 1.7;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+}
