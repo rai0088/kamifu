@@ -62,6 +62,18 @@ h2 {
   text-decoration: underline;
 }
 
+#nav a[aria-current="page"] {
+  color: #2f4633;
+  font-weight: 700;
+}
+
+@media (min-width: 769px) and (max-width: 1100px) {
+  #nav a {
+    margin: 0 10px;
+    font-size: 16px;
+  }
+}
+
 /* HAMBURGER – SKRYTÝ NA DESKTOPU */
 #hamburger {
   display: none;
@@ -752,5 +764,128 @@ margin-bottom: 0;
     white-space: normal;
     overflow-wrap: break-word;
     word-break: normal;
+  }
+}
+
+/* =====================================================
+   PRAVIDLA DESKOVÝCH HER
+===================================================== */
+
+#games-page {
+  max-width: 700px;
+  margin: 140px auto 60px;
+  padding: 0 20px;
+}
+
+#games-page h1 {
+  font-family: 'Playfair Display', serif;
+  color: #2f4633;
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.games-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+#games-page details {
+  background: #ffffffaa;
+  border-radius: 12px;
+  margin: 14px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+#games-page summary {
+  padding: 20px 24px;
+  color: #2f4633;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#games-page details p {
+  margin: 0 24px 16px;
+  color: #555;
+  line-height: 1.7;
+}
+
+#camera-page {
+  max-width: 700px;
+  margin: 140px auto 60px;
+  padding: 0 20px;
+}
+
+#camera-page h1 {
+  font-family: 'Playfair Display', serif;
+  color: #2f4633;
+  text-align: center;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.camera-intro {
+  text-align: center;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+#camera-page .camera-instruction {
+  background: #ffffffaa;
+  border-radius: 12px;
+  margin: 14px 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+  overflow: hidden;
+}
+
+#camera-page .camera-instruction h2 {
+  padding: 20px 24px;
+  margin: 0;
+  color: #2f4633;
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#camera-page .camera-instruction img {
+  display: block;
+  width: calc(100% - 48px);
+  height: auto;
+  margin: 0 24px 24px;
+  border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+  #games-page {
+    margin-top: 120px;
+  }
+
+  #games-page h1 {
+    font-size: 34px;
+  }
+
+  #games-page summary {
+    font-size: 21px;
+  }
+
+  #camera-page {
+    margin-top: 120px;
+  }
+
+  #camera-page h1 {
+    font-size: 34px;
+  }
+
+  #camera-page .camera-instruction h2 {
+    font-size: 21px;
+  }
+
+  #camera-page .camera-instruction img {
+    width: calc(100% - 32px);
+    margin-left: 16px;
+    margin-right: 16px;
   }
 }
